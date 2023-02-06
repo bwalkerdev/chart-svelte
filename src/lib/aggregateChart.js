@@ -28,5 +28,12 @@ export let chartConstructor = {
             dataset.data.push(data)
         });
         this.aggregateChart.update();
+    },
+    removeData: function() {
+        this.aggregateChart.data.labels.pop();
+        this.aggregateChart.data.datasets.forEach((dataset) => {
+            dataset.data.pop();
+        });
+        this.aggregateChart.update();
     }
 }

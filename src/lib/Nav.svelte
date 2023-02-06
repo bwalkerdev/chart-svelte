@@ -2,9 +2,13 @@
     import {chartConstructor} from "./aggregateChart.js";
     import Button from "./Button.svelte";
     import {randomInt, getNextLabel} from "./random.js";
-    function handleClick(){
+    function clickAddData(){
         chartConstructor.addData(getNextLabel(), randomInt())
         console.log('Attempted to Add Data')
+    }
+    function clickRemoveData(){
+        chartConstructor.removeData()
+        console.log('Attempted to Remove Data')
     }
 </script>
 
@@ -15,7 +19,8 @@
         </h1>
     </div>
     <div class="action-container">
-        <Button on:click={handleClick} > Click Me! </Button>
+        <Button on:click={clickAddData} > Add Data </Button>
+        <Button on:click={clickRemoveData}> Remove Data </Button>
     </div>
 </div>
 
