@@ -5,7 +5,8 @@
     let ctx;
 
     onMount(async () => {
-        chartConstructor.constructChart(ctx)
+        chartConstructor.setCtx(ctx)
+        chartConstructor.constructChart()
     })
 </script>
 

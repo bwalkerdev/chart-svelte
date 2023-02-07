@@ -3,7 +3,8 @@
     import Button from "./Button.svelte";
     import {randomInt, getNextLabel} from "./random.js";
     function clickAddData(){
-        chartConstructor.addData(getNextLabel(), randomInt())
+        chartConstructor.addData([0], getNextLabel(), randomInt(), 1);
+        chartConstructor.addData([1], getNextLabel(), randomInt());
         console.log('Attempted to Add Data')
     }
     function clickRemoveData(){
